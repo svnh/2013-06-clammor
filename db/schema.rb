@@ -11,3 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+ActiveRecord::Schema.define(:version => 0) do
+
+  create_table "posts", :force => true do |t|
+    t.string  "title",   :limit => 30
+    t.string  "content"
+    t.integer "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string "name",  :limit => 30
+    t.string "email", :limit => 30
+  end
+
+end
