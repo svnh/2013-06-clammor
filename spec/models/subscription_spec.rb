@@ -8,12 +8,14 @@ describe Subscription do
   it "should belong to Group" do
     # Implement a test that checks whether 
     # Subscription belongs to Group
+    it { should belong_to(:group) }
     pending
   end 
   
   it "should belong to User" do
     # Implement a test that checks whether 
     # Subscription belongs to User
+    it { should belong_to(:user) }
     pending  
   end
 end
