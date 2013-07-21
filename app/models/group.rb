@@ -4,4 +4,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :subscriptions
   # TODO Implement Group validations. See group_spec.rb for specification.
   validates :motto, presence: true
+  validates :name, uniqueness: true
+
+  attr_accessible :motto
 end

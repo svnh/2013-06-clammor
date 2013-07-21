@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
+  attr_accessible :content
   # TODO Implement Comment associations. See comment_spec.rb for specification.
   belongs_to :post 
   belongs_to :user

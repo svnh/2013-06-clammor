@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130720224447) do
   end
 
   create_table "groups", :force => true do |t|
+    t.string   "name"
     t.string   "motto"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -35,12 +36,17 @@ ActiveRecord::Schema.define(:version => 20130720224447) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "status", :force => true do |t|
+  create_table "statuses", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "subscriptions", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.date     "renew_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
